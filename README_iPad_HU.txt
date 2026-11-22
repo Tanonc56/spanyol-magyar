@@ -24,3 +24,7 @@ Fontos:
 - Egyes Google Sheets CSV-linkeket a böngésző CORS biztonsági szabálya blokkolhat. Ha ilyen hiba történik, a linket vagy egy Apps Script köztes megoldást kell beállítani.
 - A hibás szavak és statisztikák helyben tárolódnak; böngészőadatok törlésekor elveszhetnek, más eszközre nem szinkronizálódnak.
 - A közzétett CSV-t bárki elérheti, aki ismeri a linket. Ne tárolj benne bizalmas adatot.
+
+
+FRISSÍTÉS – HELYES VÁLASZ BETŰMÉRETE
+A Beállítások lapon mostantól a „Helyes válasz betűmérete” mezőben Normál, Nagy és Extra nagy méret választható. A beállítás automatikusan mentődik az adott eszközön. A frissítéshez töltsd fel a csomag összes fájlját a GitHub repository gyökérmappájába, és a felülírást erősítsd meg.
