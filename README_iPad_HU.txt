@@ -1,30 +1,10 @@
-SPANYOL–MAGYAR SZÓTANULÓ – iPad változat
+FRISSÍTÉS – BETŰMÉRET JAVÍTVA
 
-Ez egy Safari-ból a Főképernyőre telepíthető PWA webalkalmazás, nem natív App Store alkalmazás.
+1. A ZIP-et bontsd ki Windows alatt.
+2. A GitHub spanyol-magyar repository oldalán válaszd: Add file > Upload files.
+3. A kibontott mappából jelöld ki az ÖSSZES fájlt, és töltsd fel a repository GYÖKÉR könyvtárába.
+4. Ha a GitHub jelzi, hogy az index.html, app.js vagy sw.js már létezik, a feltöltés a meglévő fájlok új verziójaként kerül commitolásra.
+5. Kattints a Commit changes gombra.
+6. Várj 1-3 percet. iPaden zárd be teljesen az alkalmazást/Safarit, majd nyisd meg újra a GitHub Pages címét. Ha még régi verziót látsz, Safariban frissítsd az oldalt.
 
-Funkciók:
-- Véletlenszerű kérdezés mindkét irányban.
-- Egy második próbálkozás hibás válasz után.
-- Kis/nagybetű és ékezet tolerancia, beállítható karaktereltérés.
-- Hibás szavak listája és külön gyakorlása.
-- Statisztika és találati arány.
-- Helyi mentés az adott iPad böngészőjében.
-- Google Sheets CSV-ből szólista-frissítés.
-
-Google Sheets:
-1. Első sor: Spanyol | Magyar.
-2. Fájl → Megosztás → Közzététel a weben.
-3. Válaszd ki a munkalapot és CSV formátumot, majd Közzététel.
-4. A kapott CSV-linket illeszd be az alkalmazás Beállítások lapján.
-
-Telepítés:
-A PWA HTTPS tárhelyet igényel. Töltsd fel a mappa összes fájlját például GitHub Pages vagy Netlify tárhelyre. iPaden nyisd meg a HTTPS címet Safariban, majd Megosztás → Hozzáadás a Főképernyőhöz.
-
-Fontos:
-- Egyes Google Sheets CSV-linkeket a böngésző CORS biztonsági szabálya blokkolhat. Ha ilyen hiba történik, a linket vagy egy Apps Script köztes megoldást kell beállítani.
-- A hibás szavak és statisztikák helyben tárolódnak; böngészőadatok törlésekor elveszhetnek, más eszközre nem szinkronizálódnak.
-- A közzétett CSV-t bárki elérheti, aki ismeri a linket. Ne tárolj benne bizalmas adatot.
-
-
-FRISSÍTÉS – HELYES VÁLASZ BETŰMÉRETE
-A Beállítások lapon mostantól a „Helyes válasz betűmérete” mezőben Normál, Nagy és Extra nagy méret választható. A beállítás automatikusan mentődik az adott eszközön. A frissítéshez töltsd fel a csomag összes fájlját a GitHub repository gyökérmappájába, és a felülírást erősítsd meg.
+A Beállítások > Helyes válasz megjelenése résznél négy méret választható: Normál, Nagy, Extra nagy, Óriás.

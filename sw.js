@@ -1,1 +1,14 @@
-const C='eshu-cache-v2',F=['./','./index.html','./app.js','./manifest.webmanifest','./icon-192.png','./icon-512.png'];self.addEventListener('install',e=>e.waitUntil(caches.open(C).then(c=>c.addAll(F))));self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(a=>Promise.all(a.filter(x=>x!==C).map(x=>caches.delete(x))))));self.addEventListener('fetch',e=>{if(new URL(e.request.url).origin===location.origin)e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request)))});
+const CACHE='eshu-cache-v3';
+const FILES=['./','./index.html','./app.js','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
+self.addEventListener('install',event=>event.waitUntil((async()=>{const c=await caches.open(CACHE);await c.addAll(FILES);await self.skipWaiting()})()));
+self.addEventListener('activate',event=>event.waitUntil((async()=>{const keys=await caches.keys();await Promise.all(keys.filter(k=>k.startsWith('eshu-cache-')&&k!==CACHE).map(k=>caches.delete(k)));await self.clients.claim()})()));
+self.addEventListener('fetch',event=>{
+  const url=new URL(event.request.url);
+  if(event.request.method!=='GET'||url.origin!==location.origin)return;
+  const isAppFile=['/','/index.html','/app.js','/manifest.webmanifest','/sw.js'].some(p=>url.pathname.endsWith(p));
+  if(isAppFile){
+    event.respondWith((async()=>{try{const fresh=await fetch(event.request,{cache:'no-store'});if(fresh.ok){const c=await caches.open(CACHE);c.put(event.request,fresh.clone())}return fresh}catch(err){const cached=await caches.match(event.request);if(cached)return cached;throw err}})());
+  }else{
+    event.respondWith(caches.match(event.request).then(r=>r||fetch(event.request)));
+  }
+});
