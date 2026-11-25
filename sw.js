@@ -1,4 +1,4 @@
-const CACHE='eshu-cache-v3';
+const CACHE='eshu-cache-v4';
 const FILES=['./','./index.html','./app.js','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
 self.addEventListener('install',event=>event.waitUntil((async()=>{const c=await caches.open(CACHE);await c.addAll(FILES);await self.skipWaiting()})()));
 self.addEventListener('activate',event=>event.waitUntil((async()=>{const keys=await caches.keys();await Promise.all(keys.filter(k=>k.startsWith('eshu-cache-')&&k!==CACHE).map(k=>caches.delete(k)));await self.clients.claim()})()));

@@ -8,3 +8,13 @@ FRISSÍTÉS – BETŰMÉRET JAVÍTVA
 6. Várj 1-3 percet. iPaden zárd be teljesen az alkalmazást/Safarit, majd nyisd meg újra a GitHub Pages címét. Ha még régi verziót látsz, Safariban frissítsd az oldalt.
 
 A Beállítások > Helyes válasz megjelenése résznél négy méret választható: Normál, Nagy, Extra nagy, Óriás.
+
+
+FRISSÍTÉS – KÉRDEZÉS IRÁNYA
+
+A Beállítások > Kérdezés iránya résznél kiválasztható:
+- Véletlenszerűen – mindkét irány
+- Spanyol szóból – magyar jelentést kérdezzen
+- Magyar szóból – spanyol fordítást kérdezzen
+
+A választás automatikusan mentődik. A frissítéshez a ZIP összes fájlját töltsd fel a GitHub repository gyökérkönyvtárába, majd Commit changes. A frissített service worker verziója v4.
